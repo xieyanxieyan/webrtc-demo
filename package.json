@@ -9,10 +9,7 @@
   "keywords": [
     "koa"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "license": "Apache-2.0",
+  "license": "MIT",
   "dependencies": {
     "koa": "^2.13.1",
     "koa-send": "^5.0.1",

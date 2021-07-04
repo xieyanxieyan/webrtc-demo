@@ -3,7 +3,7 @@
  * @Autor: xieyan
  * @Date: 2021-06-12 17:10:35
  * @LastEditors: xieyan
- * @LastEditTime: 2021-06-18 21:37:44
+ * @LastEditTime: 2021-07-02 20:07:44
 -->
 <template>
   <div class="room">
@@ -16,7 +16,6 @@
 <script>
 import socket from '../utils/socket';
 export default {
-    name: 'home',
   data() {
     return {
         roomid: '',
@@ -39,7 +38,6 @@ export default {
       }
   },
   mounted(){
-      console.log(this.$route.params, 'params---->')
       this.$nextTick(() => {
               this.getUserMedia().then(() => {
               socket.emit('join', {roomid: this.$route.params.roomid, account: this.$route.params.account})
@@ -49,7 +47,6 @@ export default {
   },
   methods: {
       getUserMedia() {
-        
             // 获取本地的媒体流，并绑定到一个video标签上输出，并且发送这个媒体流给其他客户端
             return new Promise((resolve, reject) => {
                 let myVideo = this.$refs['video-mine'];
@@ -57,7 +54,6 @@ export default {
                     navigator.webkitGetUserMedia ||
                     navigator.mozGetUserMedia ||
                     navigator.msGetUserMedia);
-                console.log(getUserMedia, 'getUserMedia--->>')
                 getUserMedia.call(navigator, {
                     "audio": true,
                     "video": true

@@ -3,7 +3,7 @@
  * @Autor: xieyan
  * @Date: 2021-06-11 14:42:24
  * @LastEditors: xieyan
- * @LastEditTime: 2021-06-18 20:46:18
+ * @LastEditTime: 2021-07-02 20:06:07
  */
 const Koa = require('koa');
 const Socket = require('koa-socket');
@@ -70,7 +70,6 @@ app._io.on('connection', sock => {
     })
     // 1 v 1
     sock.on('reply', data => {
-        console.log(data, 'data---->>')
         socks[data.account].emit('reply', data);
     })
     // 转发申请
